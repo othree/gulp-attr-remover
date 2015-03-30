@@ -1,0 +1,26 @@
+{
+    "name": "gulp-attr-remover",
+    "version": "0.0.1",
+    "homepage": "https://github.com/othree/gulp-attr-remover",
+    "repository": "https://github.com/othree/gulp-attr-remover.git",
+    "author": "othree (https://github.com/othree)",
+    "main": "./index.js",
+    "keywords": [
+      "gulpplugin", "html", "tag", "attribute"
+    ],
+    "dependencies": {
+        "gulp-util": "~2.2.1",
+        "event-stream": "~3",
+        "cheerio": "*"
+    },
+    "devDependencies": {
+        "gulp": "*",
+        "mocha": "*",
+        "should": "*",
+        "gulp-util": "*"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "license": "MIT"
+}
