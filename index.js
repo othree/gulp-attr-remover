@@ -8,7 +8,7 @@ var cheerio = require('cheerio');
 function modify(file, elem, attr, predicate) {
   "use strict";
 
-  if (predicate) { elem.removeAttr(attr); }
+  if (predicate(elem)) { elem.removeAttr(attr); }
 }
 
 module.exports = function (query, attr, predicate) {

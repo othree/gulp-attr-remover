@@ -26,14 +26,21 @@ describe('gulp-remove-attr', function () {
         var htmlBuffer = new Buffer(htmlString);
 
           
-        mod('a', 'href', function (path) {
-          return true;
+        mod('a', 'href', function (elem) {
+          if (elem.attr('href') == '/path/file.ext') {
+            return true;
+          }
+          return false;
         }).on('data', function (file) {
             console.log(file.contents);
             var $ = cheerio.load(file.contents);
-            $('a').each(function () {
+            $('a').eq(0).each(function () {
               var test = $(this).attr('href');
               should.not.exist(test);
+            });
+            $('a').eq(1).each(function () {
+              var test = $(this).attr('href');
+              test.should.equal('/altpath/file.ext');
             });
         }).write(createFile('test.html', htmlBuffer));
 
