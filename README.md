@@ -4,9 +4,9 @@ USAGE
 -----
 
 
-    function predicate(link) {
+    function predicate(elem) {
       "use strict";
-      if (link && !/^((ftp|rtsp|mms):)?\/\//.test(link)) {
+      if (!/^((ftp|rtsp|mms):)?\/\//.test(elem.attr('href'))) {
         return true;
       }
       return false;
